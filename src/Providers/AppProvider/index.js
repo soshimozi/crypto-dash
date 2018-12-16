@@ -47,10 +47,6 @@ export default class AppProvider extends React.Component {
 
     isInFavorites = key => _.includes(this.state.favorites, key)
 
-    removeKey = key => {
-
-    }
-
     confirmFavorites = () => {
       this.setState({
         firstVisit: false,
