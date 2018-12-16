@@ -1,5 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 import {subtleBoxShadow, lightBlueBackground, greenBoxShadow, redBoxShadow} from '../Shared/Styles';
+
 
 export const Tile = styled.div`
   ${subtleBoxShadow}
@@ -8,8 +10,8 @@ export const Tile = styled.div`
 `
 
 export const SelectableTile = styled(Tile)`
-&:hover {
-  cursor: pointer;
-  ${greenBoxShadow}
-}
+  &:hover {
+    cursor: pointer;
+    ${greenBoxShadow}
+  }
 `
