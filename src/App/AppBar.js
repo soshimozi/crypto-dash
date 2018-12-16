@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
-import {AppContext} from './AppProvider';
+import {AppContext} from '../Providers/AppProvider';
 
 const Logo = styled.div`
     font-size: 1.5em;

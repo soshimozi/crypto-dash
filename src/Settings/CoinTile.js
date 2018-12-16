@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppContext} from "../App/AppProvider";
+import {AppContext} from "../Providers/AppProvider";
 import { SelectableTile, DisabledTile, DeletableTile } from '../Shared/Tile';
 import CoinHeaderGrid from './CoinHeaderGrid';
 import TileImage from '../Shared/TileImage';
