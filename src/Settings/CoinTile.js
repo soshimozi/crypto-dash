@@ -4,15 +4,25 @@ import { SelectableTile, DisabledTile, DeletableTile } from '../Shared/Tile';
 import CoinHeaderGrid from './CoinHeaderGrid';
 import TileImage from '../Shared/TileImage';
 
+function clickCoinHandler(topSection, coinKey, addCoin, removeCoin) {
+  return topSection ? () => {
+    removeCoin(coinKey)
+  } : () => {
+    addCoin(coinKey);
+  }
+}
+
 export default function({coinKey, topSection}) {
 
   return <AppContext.Consumer>
-    {({coinList}) => {
+    {({coinList, addCoin, removeCoin, isInFavorites}) => {
       let coin = coinList[coinKey];
 
-      const TileClass = topSection ? DeletableTile : SelectableTile;
+      const TileClass = topSection ? DeletableTile : isInFavorites(coinKey) ? DisabledTile : SelectableTile;
 
-      return <TileClass>
+      return <TileClass
+        onClick={clickCoinHandler(topSection, coinKey, addCoin, removeCoin)}
+      >
         <CoinHeaderGrid topSection={topSection} name={coin.CoinName} symbol={coin.Symbol} />
         <TileImage 
           imageUrl={`http://cryptocompare.com/${coin.ImageUrl}`}
