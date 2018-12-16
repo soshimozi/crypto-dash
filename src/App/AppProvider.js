@@ -22,9 +22,7 @@ export default class AppProvider extends React.Component {
 
     fetchCoins = async() => {
       let coinList = (await cc.coinList());
-      this.setState({coinList});
-
-      console.log(coinList.Data.NXT);
+      this.setState({coinList: coinList.Data});
     }
 
     confirmFavorites = () => {
