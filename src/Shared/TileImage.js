@@ -1,10 +1,19 @@
 import React from 'react';
+import styled, {css} from 'styled-components';
 
-export default function ({imageUrl, alt, style}) {
+const CoinImage = styled.img`
+  height: 50px;
+  ${props => props.highlight && css`
+    height: 200px;
+    margin: auto;
+    display: block;
+  `}
+`;
+export default function ({imageUrl, alt, highlight}) {
   return (
-    <img
+    <CoinImage
+    highlight={highlight}
     alt={alt || ''}
-    style={style || {height: '50px'}}
     src={imageUrl}
     />
   );
