@@ -24,9 +24,9 @@ export default class AppProvider extends React.Component {
             setFilteredCoins: this.setFilteredCoins,
             setCurrentFavorite: this.setCurrentFavorite
         }
-    }
+    
 
-    componentDidMount = () => {
+     
       this.fetchCoins();
       this.fetchPrices();
       this.fetchHistorical();
